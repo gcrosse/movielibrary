@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Movie Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Movie Library</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/add-movie">Add Movie</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/movies">All Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <h1>About Movie Library</h1>
+    <p>Welcome to Movie Library! This web application lets you add, view, and manage your favorite movies. 
+       You can filter and sort movies by genre or release year, and all data is stored persistently in a database.</p>
+    <p>This project demonstrates:</p>
+    <ul>
+        <li>Spring Boot & Spring Data JPA integration</li>
+        <li>Thymeleaf templating for dynamic web pages</li>
+        <li>Form validation and database persistence</li>
+        <li>Bootstrap styling for a responsive interface</li>
+    </ul>
+</div>
+
+<footer class="bg-dark text-white text-center py-3 mt-4">
+    &copy; 2026 Movie Library
+</footer>
+</body>
+</html>
