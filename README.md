@@ -1,3 +1,41 @@
+DEliverable 3 Update:
+
+# Movie Library Application
+
+## Project Overview
+This project is a Spring Boot web application that allows users to manage a movie library. Users can add movies, view all movies, filter movies by genre and year, and sort them by different fields. The application also includes user authentication and a statistics feature powered by a separate microservice.
+
+## Features
+- Add new movies
+- View all movies
+- Filter by genre
+- Filter by year
+- Sort movies
+- User login and registration
+- Movie statistics page
+- Docker support for the main application and MySQL database
+- Microservice integration for movie statistics
+
+## Technologies Used
+- Java 17
+- Spring Boot
+- Spring MVC
+- Spring Data JPA
+- Thymeleaf
+- MySQL
+- Docker
+- Maven
+
+## Main Application
+The main Movie Library application runs on:
+
+```text
+http://localhost:8080
+
+
+
+
+
 # Movie Library Application
 
 A simple Spring Boot web application for managing a movie library.  
