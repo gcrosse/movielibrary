@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Movie Stats</title>
+    </head>
+    <body>
+        <h1>Movie Stats</h1>
+
+        <p>Total Movies: <span th:text="${total.totalMovies}"></span></p>
+        <p>Average Rating: <span th:text="${avg.averageRating}"></span></p>
+        <p>Movies Released in 2025: <span th:text="${year2025.count}"></span></p>
+
+        <a href="/movies">Back to Movies</a>
+    </body>
+</html>

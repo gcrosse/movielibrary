@@ -47,24 +47,35 @@ public class MovieController {
     // List movies with optional filtering and sorting
     @GetMapping("/movies")
     public String viewMovies(
-            @RequestParam(required = false) String genre,
-            @RequestParam(required = false) Integer year,
-            @RequestParam(required = false, defaultValue = "id") String sort,
-            Model model) {
+        @RequestParam(required = false) String genre,
+        @RequestParam(required = false) Integer year,
+        @RequestParam(required = false, defaultValue = "id,asc") String sort,
+        Model model) {
 
         List<Movie> movies;
 
+        String[] sortParts = sort.split(",");
+        String sortField = sortParts[0];
+        String sortDirection = sortParts.length > 1 ? sortParts[1] : "asc";
+
+        Sort sortObj = sortDirection.equalsIgnoreCase("desc")
+            ? Sort.by(sortField).descending()
+            : Sort.by(sortField).ascending();
+
         if (genre != null && !genre.isEmpty() && year != null) {
-            movies = movieRepository.findByGenreAndYear(genre, year, Sort.by(sort));
+        movies = movieRepository.findByGenreAndYear(genre, year, sortObj);
         } else if (genre != null && !genre.isEmpty()) {
-            movies = movieRepository.findByGenre(genre, Sort.by(sort));
+        movies = movieRepository.findByGenre(genre, sortObj);
         } else if (year != null) {
-            movies = movieRepository.findByYear(year, Sort.by(sort));
+        movies = movieRepository.findByYear(year, sortObj);
         } else {
-            movies = movieRepository.findAll(Sort.by(sort));
+        movies = movieRepository.findAll(sortObj);
         }
 
         model.addAttribute("movies", movies);
+        model.addAttribute("genre", genre);
+        model.addAttribute("year", year);   
+        model.addAttribute("sort", sort);
         return "movies";
     }
 }

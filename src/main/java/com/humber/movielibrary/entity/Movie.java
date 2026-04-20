@@ -30,11 +30,11 @@ public class Movie {
     @Min(value = 1900, message = "Release year must be after 1900")
     @Max(value = 2100, message = "Release year must be before 2100")
     @Column(name = "`year`")  // Escape the reserved keyword
-    private int year;
+    private Integer year;
 
     @Min(value = 1, message = "Rating must be between 1 and 10")
     @Max(value = 10, message = "Rating must be between 1 and 10")
-    private int rating;
+    private Integer rating;
 
     private LocalDateTime createdAt;
 
